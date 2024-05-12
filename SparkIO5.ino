@@ -8,6 +8,7 @@ void setup() {
   Serial.begin(115200);
 
   spark_state_tracker_start();
+  
   DEBUG("Starting");
 }
 
