@@ -76,6 +76,7 @@ bool spark_state_tracker_start() {
   #else
   DEBUG("Bluetooth library is NimBLE");
   #endif
+  DEBUG("SparkIO version: full malloc");
   // handle different spark types
   DEB("SPARK TYPE ");
   switch (spark_type) {
@@ -88,9 +89,9 @@ bool spark_state_tracker_start() {
     case MINI:
       DEBUG("Spark MINI");
       break;
-    case LIVE:
-      DEBUG("Spark LIVE");
-      break;      
+    case NONE:
+      DEBUG("Unknown");
+      break; 
   }
 
   if (spark_type != LIVE) { // should be NOT LIVE but just doing this anyway

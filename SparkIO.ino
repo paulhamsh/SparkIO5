@@ -174,7 +174,9 @@ void show_heap() {
 
 int memrnd(int mem) {
   int new_mem;
-
+  return new_mem;
+  
+  // or if youo want to implement rounding use this below
   if (mem <= 20) new_mem = 20;
   else if (mem <= 100) new_mem = 100;
   else if (mem <= 800) new_mem = 800;
