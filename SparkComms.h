@@ -41,8 +41,6 @@ char *spark_bt_name;
 
 QueueHandle_t qFromApp;
 QueueHandle_t qFromSpark;
-QueueHandle_t qFromAppFilter;
-QueueHandle_t qFromSparkFilter;
 
 struct packet_data {
   uint8_t *ptr;
@@ -61,7 +59,7 @@ BluetoothSerial *bt;
 #include "NimBLEDevice.h"
 #endif
 
-#define BLE_BUFSIZE 2000
+//#define BLE_BUFSIZE 2000
 
 bool ble_passthru;
 
@@ -81,7 +79,7 @@ void connect_spark();
 void send_to_spark(); 
 void send_to_app();
 
-void spark_comms_process();
+//void spark_comms_process();
 
 int ble_getRSSI();
 

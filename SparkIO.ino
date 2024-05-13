@@ -235,7 +235,6 @@ void new_packet_from_data(struct packet_data *pd, uint8_t *data, int length) {
   pd->size = length;
   for (int i = 0; i < length; i++)
     pd->ptr[i] = data[i];
-  //memcpy(pd->ptr, data, length);
 }
 
 void clear_packet(struct packet_data *pd) {
@@ -312,12 +311,12 @@ bool scan_packet (struct packet_data *pd, int *start, int *this_end, int end) {
     }
  
     // skip a block header if we find one
-    else if (buf[p] == 0x01 && buf[p + 1] == 0xfe) {
+    else if (end - p >= 2 && buf[p] == 0x01 && buf[p + 1] == 0xfe) {
       p += 16;
     }
     
     // found start of a message - either single or multi-chunk
-    else if (buf [p] == 0xf0 && buf[p + 1] == 0x01 && (end - p >= 6)) {
+    else if (end - p >= 6 && buf [p] == 0xf0 && buf[p + 1] == 0x01 ) {
 
       //DEBUG_COMMS("Pos %3d: new header", p);
       found_chunk = true;

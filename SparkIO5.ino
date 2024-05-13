@@ -1,4 +1,4 @@
-#define CLASSIC
+//#define CLASSIC
 //#define PSRAM
 
 #include "SparkIO.h"

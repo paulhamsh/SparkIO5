@@ -103,7 +103,7 @@ void process_sparkIO();
 void spark_send();
 void app_send();
 
-void init_sparkIO();
+//void init_sparkIO();
 
 #endif
       

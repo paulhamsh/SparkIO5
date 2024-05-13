@@ -18,9 +18,6 @@ void setup_comms_queues() {
   qFromApp         = xQueueCreate(20, sizeof (struct packet_data));
   qFromSpark       = xQueueCreate(20, sizeof (struct packet_data));
 
-  qFromAppFilter   = xQueueCreate(20, sizeof (struct packet_data));
-  qFromSparkFilter = xQueueCreate(20, sizeof (struct packet_data));
-
 #ifdef PSRAM
   if (psramInit()) {
     Serial.print("PSRAM ok: ");
